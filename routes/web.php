@@ -18,3 +18,7 @@ Route::get('/', 'ConsumindoApiController@estados');
 
 
 Route::get('/consumindo', 'ConsumindoApiController@index');
+
+Route::get('/popSelect', 'PopularSelectController@index');
+
+
