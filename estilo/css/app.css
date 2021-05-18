@@ -10,13 +10,7 @@
     --shadow: 0 0 30px 0 rgb(82 63 105 / 5%);
 }
 
-.dark {
-    --bg-body: #151515;
-    --bg-content: #242526;
-    --bg-hover: #151f28;
 
-    --color-txt: #dcdcdc;
-}
 
 * {
     padding: 0;
@@ -74,52 +68,10 @@ body {
     color: rgb(6, 134, 27);
 }
 
-.darkmode-switch {
-    --width: 60px;
-    --height: 20px;
-    width: var(--width);
-    height: var(--height);
-    background-color: lightslategray;
-    border-radius: 10px;
-    position: relative;
-    cursor: pointer;
-}
 
-.darkmode-switch span {
-    display: inline-grid;
-    place-items: center;
-    height: calc(var(--height) * 2);
-    width: calc(var(--height) * 2);
-    border-radius: 50%;
-    background-color: var(--color-txt);
-    color: var(--bg-content);
-    font-size: 2rem;
-    position: absolute;
-    left: 0;
-    top: calc(-1 * var(--height) / 2);
-    transition: left 0.3s ease-in-out;
-}
 
-.darkmode-switch.dark span {
-    left: calc(var(--width) - var(--height) * 2);
-    background-color: var(--bg-body);
-    color: var(--color-txt);
-}
 
-.darkmode-switch span .bxs-moon {
-    display: none;
-}
 
-.darkmode-switch.dark span .bxs-moon {
-    display: inline-block;
-}
-
-.darkmode-switch.dark span .bxs-sun {
-    display: none;
-}
-/* end top nav */
-
-/* box */
 .box {
     width: 100%;
     border-radius: 10px;
@@ -144,7 +96,7 @@ body {
 }
 
 .box-header {
-    padding: 10px 0 30px;
+    padding: 30px 0 30px;
     font-size: 1.25rem;
     font-weight: 700;
     color: var(--color-txt);
@@ -217,7 +169,7 @@ body {
 
 .state-select-toggle {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
     font-size: 1.25rem;
     padding: 0 15px;
@@ -267,6 +219,25 @@ body {
     background-color: var(--bg-hover);
 }
 /* end country dropdown */
+.bnt { 
+    
+    outline: none;
+    display: block;
+    border: solid 0;
+    font-size: 18px;
+    line-height:0 ;
+    padding: 20px 30px;
+    border-radius: 40px;
+    position: relative;
+    background-color: #ffffff;
+    background: #ffffff;;
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+.bnt :hover,
+.bnt :focus{
+
+}
 
 /* count box */
 .count {
