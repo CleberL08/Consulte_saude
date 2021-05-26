@@ -8,11 +8,6 @@ class Cidade extends Model
 {
 
 
-    protected $table = 'Cidade';
-    protected $primaryKey =  'cid_cod' ;
-
-    protected $fillables = [
-        'cid_nome',
-        'est_cod'
-    ];
+    protected $table = 'cidade';
+ 
 }

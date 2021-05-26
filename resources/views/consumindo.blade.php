@@ -20,31 +20,31 @@
     <table>
         <thead>
 
-        <tr>
-        <td><strong>city</strong></td>
-        <td><strong>city_ibge_code</strong></td>
-        <td><strong>    date    </strong></td>
-        <td><strong>epidemiological_week</strong></td>
-        <td><strong>estimated_population</strong></td>
-        <td><strong>estimated_population_2019</strong></td>
-        <td><strong>is_last</strong></td>
-        <td><strong>is_repeated</strong></td>
-        <td><strong>last_available_confirmed</strong></td>
-        <td><strong>last_available_confirmed_per_100k_inhabitants</strong></td>
-        <td><strong>last_available_date</strong></td>
-        <td><strong>last_available_death_rate</strong></td>
-        <td><strong>last_available_deaths</strong></td>
-        <td><strong>new_confirmed</strong></td>
-        <td><strong>new_deaths</strong></td>
-        <td><strong>order_for_place</strong></td>
-        <td><strong>place_type</strong></td>
-        <td><strong>state</strong></td>
-
-        
-        </tr>    
-            @foreach($datas['results'] as $data) 
             <tr>
-            
+                <td><strong>city</strong></td>
+                <td><strong>city_ibge_code</strong></td>
+                <td><strong> date </strong></td>
+                <td><strong>epidemiological_week</strong></td>
+                <td><strong>estimated_population</strong></td>
+                <td><strong>estimated_population_2019</strong></td>
+                <td><strong>is_last</strong></td>
+                <td><strong>is_repeated</strong></td>
+                <td><strong>last_available_confirmed</strong></td>
+                <td><strong>last_available_confirmed_per_100k_inhabitants</strong></td>
+                <td><strong>last_available_date</strong></td>
+                <td><strong>last_available_death_rate</strong></td>
+                <td><strong>last_available_deaths</strong></td>
+                <td><strong>new_confirmed</strong></td>
+                <td><strong>new_deaths</strong></td>
+                <td><strong>order_for_place</strong></td>
+                <td><strong>place_type</strong></td>
+                <td><strong>state</strong></td>
+
+
+            </tr>
+            @foreach($datas['results'] as $data)
+            <tr>
+
                 <td> {{$data['city']}} </td>
 
                 <td> {{$data['city_ibge_code']}} </td>
@@ -64,8 +64,8 @@
                 <td> {{$data['order_for_place']}} </td>
                 <td> {{$data['place_type']}} </td>
                 <td> {{$data['state']}} </td>
-                
-                </tr>
+
+            </tr>
             @endforeach
         </thead>
     </table>

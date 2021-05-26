@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Pais;
 use App\Models\Estado;
 use App\Models\Cidade;
+use Illuminate\Support\Facades\DB;
 
 class PopularSelectController extends Controller
 {
@@ -41,9 +42,16 @@ class PopularSelectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function loadCidades(Request $request)
     {
-        //
+        $dataForm = $request->all();
+        $est_cod = $dataForm['estadosPick'];
+        $sql= "Select cidade.cid_cod, cidade.cid_nome from cidade where est_cod = '$est_cod' " ;
+        $sql = $sql . "order by cidade.cid_nome ASC";
+        $cidade = DB::select($sql);
+        
+        return view('cidades_ajax', ['cidade' => $cidade]);
+
     }
 
     /**
