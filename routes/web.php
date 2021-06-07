@@ -17,7 +17,7 @@ Route::get('/', 'PopularSelectController@index');
 Route::get('load_cidades', 'PopularSelectController@loadCidades')->name('load_cidades');
 Route::post('load_api', 'ConsumindoApiController@loadApi')->name('load_api');
 
-Route::get('/consumindo', 'ConsumindoApiController@loadApi');
+Route::get('/consumindo', 'ConsumindoApiController@estados');
 
 
 

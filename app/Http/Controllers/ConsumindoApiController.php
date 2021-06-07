@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
+use App\Models\Pais;
+use App\Models\Estado;
+use App\Models\Cidade;
 
-
-
+use function GuzzleHttp\json_decode;
 
 class ConsumindoApiController extends Controller
 {
@@ -35,7 +37,15 @@ class ConsumindoApiController extends Controller
 
         $response = Http::withHeaders(['Authorization' => 'Token 880782cedecb384f6872b14637181d48a1a0b840'])->get($url);
         $datas = $response->json();
-        return view('consumindo', compact('datas'));
+
+       
+
+        $novoData = $datas['results'][0];
+
+        // dd($novoData);
+        
+        
+        return view('consumindo', ['novoData' => $novoData]);
     }
 
     /**
@@ -43,10 +53,8 @@ class ConsumindoApiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function estados()
 
-    {
-    }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -54,6 +62,10 @@ class ConsumindoApiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+
+
+
     public function store(Request $request)
     {
         //

@@ -14,13 +14,8 @@ $(document).ready(function() {
             },
             success: function(data) {
                 $('#cidadesPick').html(data);
-                console.log("deu bom");
 
             },
-            error: function(data) {
-                console.log("deu pau");
-                console.log(data);
-            }
         });
     });
 });

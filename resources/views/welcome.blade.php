@@ -12,6 +12,7 @@
     <link rel="shortcut icon" href="{{asset('img/icon.covid.png')}}" type="image/png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/grid.css')}}">
 </head>
@@ -26,6 +27,29 @@
             </div>
         </div>
     </div>
+
+    <center>
+
+        <h1>Painel Geral</h1>
+        <div class="col-4 col-md-4 col-sm-12">
+            <div class="box box-hover">
+                <div class="count count-recovered">
+                    <div class="count-icon">
+                        <i class="bx bxs-smile"></i>
+                    </div>
+                    <div class="count-info">
+                        <h5 id="recovered-total">123,456,789</h5>
+                        <span>Recuperado</span>
+                    </div>
+                </div>
+            </div>
+    </center>
+        </div>
+
+
+
+
+
     <form name="regionForm" id="regionForm" action="{{ route('load_api') }}" method="post" data-cidades-url="{{ route('load_cidades') }}">
         @csrf
         <div class="row">
@@ -61,7 +85,10 @@
                 </div>
             </div>
         </div>
+
     </form>
+
+
     <div class="row">
         <div class="col-8 col-md-12 col-sm-12">
             <div class="row">
@@ -72,25 +99,13 @@
                                 <i class="bx bxs-virus"></i>
                             </div>
                             <div class="count-info">
-                                <h5 id="confirmed-total">123,456,789</h5>
+                                <h5 id="confirmed-total"> </h5>
                                 <span>Confirmados</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-4 col-md-4 col-sm-12">
-                    <div class="box box-hover">
-                        <div class="count count-recovered">
-                            <div class="count-icon">
-                                <i class="bx bxs-smile"></i>
-                            </div>
-                            <div class="count-info">
-                                <h5 id="recovered-total">123,456,789</h5>
-                                <span>Recuperado</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
                 <div class="col-4 col-md-4 col-sm-12">
                     <div class="box box-hover">
                         <div class="count count-death">
@@ -125,14 +140,15 @@
                                         ['', ''],
                                         ['Janeiro', 2000],
                                         ['Fevereiro', 4000],
-                                        ['Março', 6000],
-                                        ['Abril', 8000],
-                                        ['Maio', 10000]
+                                        ['Março', 60],
+                                        ['Abril', 800],
+                                        ['Maio', 1000],
+                                        ['Junho', 15851]
                                     ])
                                     const options = {
 
                                         height: 480,
-                                        width: 800
+                                        width: 00
                                     }
 
                                     // const chart = new google.visualization.ColumnChart(container)
@@ -262,12 +278,9 @@
 
                 </div>
             </div>
-
-
-
             <div class="box">
                 <div class="box-header">
-                    top paises enfectado
+                    top paises infectado
                 </div>
                 <div class="box-body">
                     <table class="table-countries" id="table-countries">
@@ -299,6 +312,7 @@
 
     </div>
     </div>
+
 
 
     <!-- </div> -->
