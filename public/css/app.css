@@ -82,10 +82,6 @@ body {
     border: 0 none;
 }
 
-.dark .box {
-    border: 1px solid var(--bg-content);
-    background-color: var(--bg-body);
-}
 
 .box-hover {
     transition: transform 0.2s ease-in-out;
@@ -245,10 +241,6 @@ body {
     cursor: pointer;
     transition: all 0.3s linear;
 }
-.bnt :hover,
-.bnt :focus{
-
-}
 
 /* count box */
 .count {
@@ -367,6 +359,10 @@ body {
     padding: 2rem;
 }
 /* end footer */
+
+
+
+
 
 @media only screen and (max-width: 1280px) {
     body {

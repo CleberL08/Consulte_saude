@@ -38,7 +38,7 @@
                         <i class="bx bxs-smile"></i>
                     </div>
                     <div class="count-info">
-                        <h5 id="recovered-total">123,456,789</h5>
+                        <h5 id="recovered-total">{{$var2}}</h5>
                         <span>Recuperado</span>
                     </div>
                 </div>
@@ -89,9 +89,10 @@
     </form>
 
 
-    <div class="row">
+    <div  class="row">
         <div class="col-8 col-md-12 col-sm-12">
-            <div class="row">
+            <div  class="row">
+    
                 <div class="col-4 col-md-4 col-sm-12">
                     <div class="box box-hover">
                         <div class="count count-confirmed">
@@ -119,6 +120,8 @@
                         </div>
                     </div>
                 </div>
+                
+
                 <div class="col-12">
                     <div class="box">
                         <div class="box-header">

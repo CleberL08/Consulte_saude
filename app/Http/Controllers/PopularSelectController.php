@@ -34,7 +34,24 @@ class PopularSelectController extends Controller
       ->orderBy('cid_nome', 'ASC')->get();  
 
 
-      return view('welcome', ['estado' => $estado, 'cidade' => $cidade]);
+    $url = "https://www.worldometers.info/coronavirus/country/brazil/";  
+
+    $dadosSite = file_get_contents($url);
+
+       
+
+
+    $var1 = explode('<span>',  $dadosSite);
+    $novoVar1 = $var1[2];
+    $var2 = explode('</span>', $novoVar1);
+    $novoVar2 = $var2[0];
+
+    
+    
+    
+
+
+      return view('welcome', ['estado' => $estado, 'cidade' => $cidade, 'var2' =>$novoVar2]);
     }
 
     /**
