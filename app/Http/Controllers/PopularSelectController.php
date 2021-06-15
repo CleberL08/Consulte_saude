@@ -26,32 +26,44 @@ class PopularSelectController extends Controller
 
     public function index()
     {
-      $estado = $this->estado
-      ->orderBy('est_nome', 'ASC')->get(); 
+        $estado = $this->estado
+            ->orderBy('est_nome', 'ASC')->get();
 
-      $cidade = $this->cidade
-      ->Where('cid_cod' , '=', 0)
-      ->orderBy('cid_nome', 'ASC')->get();  
-
-
-    $url = "https://www.worldometers.info/coronavirus/country/brazil/";  
-
-    $dadosSite = file_get_contents($url);
-
-       
+        $cidade = $this->cidade
+            ->Where('cid_cod', '=', 0)
+            ->orderBy('cid_nome', 'ASC')->get();
 
 
-    $var1 = explode('<span>',  $dadosSite);
-    $novoVar1 = $var1[2];
-    $var2 = explode('</span>', $novoVar1);
-    $novoVar2 = $var2[0];
+        $urlBrazilData = "https://www.worldometers.info/coronavirus/country/brazil/";
 
-    
-    
-    
+        $brazilData = file_get_contents($urlBrazilData);
+        $recoveredData = explode('<span>',  $brazilData);
+        $newRecoveredData = $recoveredData[2];
+        $endRecoveredData = explode('</span>', $newRecoveredData);
+        $endNewRecoveredData = $endRecoveredData[0];
 
 
-      return view('welcome', ['estado' => $estado, 'cidade' => $cidade, 'var2' =>$novoVar2]);
+        $casesData =  explode('<span style="color:#aaa">',  $brazilData);
+        $newCasesData = $casesData[1];
+        $endCasesData = explode('</span>', $newCasesData);
+        $endNewCasesData = $endCasesData[0];
+
+
+        $deathsData = explode('<span>', $brazilData);
+        $newDeathsData = $deathsData[1];
+        $endDeathsData = explode('</span>', $newDeathsData);
+        $endNewDeathsData = $endDeathsData[0];
+
+        return view(
+            'welcome',
+            [
+                'estado' => $estado,
+                'cidade' => $cidade,
+                'recoveredBrazilData' => $endNewRecoveredData,
+                'casesBrazilData' => $endNewCasesData,
+                'deathsBrazilData' => $endNewDeathsData
+            ]
+        );
     }
 
     /**
@@ -63,12 +75,11 @@ class PopularSelectController extends Controller
     {
         $dataForm = $request->all();
         $est_cod = $dataForm['estadosPick'];
-        $sql= "Select cidade.cid_cod, cidade.cid_nome from cidade where est_cod = '$est_cod' " ;
+        $sql = "Select cidade.cid_cod, cidade.cid_nome from cidade where est_cod = '$est_cod' ";
         $sql = $sql . "order by cidade.cid_nome ASC";
         $cidade = DB::select($sql);
-        
-        return view('cidades_ajax', ['cidade' => $cidade]);
 
+        return view('cidades_ajax', ['cidade' => $cidade]);
     }
 
     /**

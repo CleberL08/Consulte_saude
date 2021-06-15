@@ -38,14 +38,29 @@ class ConsumindoApiController extends Controller
         $response = Http::withHeaders(['Authorization' => 'Token 880782cedecb384f6872b14637181d48a1a0b840'])->get($url);
         $datas = $response->json();
 
-       
 
         $novoData = $datas['results'][0];
+     
 
-        // dd($novoData);
-        
-        
-        return view('consumindo', ['novoData' => $novoData]);
+
+
+        $urlBrazilData = "https://www.worldometers.info/coronavirus/country/brazil/";
+
+        $brazilData = file_get_contents($urlBrazilData);
+        $recoveredData = explode('<span>',  $brazilData);
+        $newRecoveredData = $recoveredData[2];
+        $endRecoveredData = explode('</span>', $newRecoveredData);
+        $endNewRecoveredData = $endRecoveredData[0];
+
+
+
+        return view(
+            'consumindo',
+            [
+                'novoData' => $novoData,
+                'recoveredBrazilData' => $endNewRecoveredData
+            ]
+        );
     }
 
     /**
@@ -54,7 +69,7 @@ class ConsumindoApiController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    
+
 
     /**
      * Store a newly created resource in storage.

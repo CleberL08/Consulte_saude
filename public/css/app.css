@@ -1,5 +1,5 @@
 :root {
-    --bg-body: #fafbfd;
+    --bg-body: #f4f5f6;
     --bg-content: #ffffff;
     --bg-hover: #f4f4f4;
 
@@ -24,7 +24,7 @@ a {
 
 body {
     font-family: "Cairo", sans-serif;
-    position: relative;
+    position: absolute;
     background-color: var(--bg-body);
     color: var(--color-txt);
     padding-top: calc(var(--nav-height) + 30px);
@@ -80,6 +80,42 @@ body {
     padding: 15px;
     margin-bottom: 30px;
     border: 0 none;
+  
+}
+.box7{
+    width: 35%;
+    border-radius: 10px;
+    background-color: var(--bg-content);
+    box-shadow: var(--shadow);
+    padding: 15px;
+    margin-bottom: 30px;
+    border: 0 none;
+    position: absolute;
+    top: 87%;
+}
+.box6{
+    width: 35%;
+    border-radius: 10px;
+    background-color: var(--bg-content);
+    box-shadow: var(--shadow);
+    padding: 15px;
+    margin-bottom: 30px;
+    border: 0 none;
+    position: absolute;
+    top: 48%;
+}
+
+.box5 {
+    width: 35%;
+    border-radius: 10px;
+    background-color: var(--bg-content);
+    box-shadow: var(--shadow);
+    padding: 15px;
+    margin-bottom: 30px;
+    border: 0 none;
+    position: absolute;
+    top: 14.5%;
+      
 }
 
 
@@ -90,10 +126,12 @@ body {
 .box-hover:hover {
     transform: scale(1.05) translateY(-10px);
     box-shadow: rgb(0 0 0 / 10%) 0px 15px 30px;
+    
+
 }
 
 .box-header {
-    padding: 30px 0 30px;
+    padding: 0px 0 30px;
     font-size: 1.25rem;
     font-weight: 700;
     color: var(--color-txt);
@@ -125,7 +163,9 @@ body {
     padding: 0 15px;
     cursor: pointer;
     font-weight: 700;
-    position: relative;
+    position: absolute;
+    top: 0px;
+    left: 200px;
 }
 
 .country-select-list {
@@ -171,7 +211,7 @@ body {
 /* end country dropdown */
 /* country dropdown */
 .state-select {
-    position: left;
+    position: left 15px;
 }
 
 .state-select-toggle {
@@ -218,7 +258,7 @@ body {
 }
 
 .state-item {
-    padding: 5px 15px;
+    padding: 500px 15px;
     cursor: pointer;
 }
 
@@ -241,6 +281,8 @@ body {
     cursor: pointer;
     transition: all 0.3s linear;
 }
+
+
 
 /* count box */
 .count {
@@ -281,9 +323,15 @@ body {
     color: red;
 }
 
+
+.count-recovered{
+    justify-content: center!important;
+
+}
 .count-recovered .count-icon {
     background-color: #bffabf;
     color: green;
+    
 }
 
 .count-recovered .count-info h5 {
@@ -359,10 +407,6 @@ body {
     padding: 2rem;
 }
 /* end footer */
-
-
-
-
 
 @media only screen and (max-width: 1280px) {
     body {
