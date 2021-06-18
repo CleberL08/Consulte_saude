@@ -22,7 +22,7 @@
         <div class="container">
             <div class="nav">
                 <a href="/" class="logo">
-                    C<i class="bx bxs-virus-block bx-tada"></i>VID APURAÇAO
+                    C<i class="bx bxs-virus-block bx-tada"></i>VID APURAÇÃO
                 </a>
             </div>
         </div>
@@ -31,13 +31,13 @@
     <center>
         <div class="row">
             <div class="col-8 col-md-12 col-sm-12">
-                    <h1>Dados da cidade {{$novoData['city']}} - {{$novoData['state']}}</h1>
+                <h1>Dados da cidade {{$novoData['city']}} - {{$novoData['state']}}</h1>
                 <div class="row">
 
                     <div class="item">
-                    <a href="/"><button type="back" class="bnt">
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAs0lEQVRIS+WU0Q2DMAwFjw3YhI7QjsAkrNBuxAZ0BNiEEZAlqKwohJiYjwq+ozs/27ji4q+6mM99BDXQAR9rS3NaJPABeKyCt0VyJNDwCXgCs5egGC6F7CVwge8J3OAxgSs8FGi4ZY6xt7/W6xmI4As0pXQ923DIWjICL+tahsXFtshVklrTrV1FSVJ/skuSnFNRlORIIDPTSVqgt2xZjmCTyKEzwVO3yFJk8m1ugtPC/xcsChkmGdr4XvMAAAAASUVORK5CYII=" />
-                     </button>  </a> 
+                        <a href="/"><button type="back" class="bnt">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAs0lEQVRIS+WU0Q2DMAwFjw3YhI7QjsAkrNBuxAZ0BNiEEZAlqKwohJiYjwq+ozs/27ji4q+6mM99BDXQAR9rS3NaJPABeKyCt0VyJNDwCXgCs5egGC6F7CVwge8J3OAxgSs8FGi4ZY6xt7/W6xmI4As0pXQ923DIWjICL+tahsXFtshVklrTrV1FSVJ/skuSnFNRlORIIDPTSVqgt2xZjmCTyKEzwVO3yFJk8m1ugtPC/xcsChkmGdr4XvMAAAAASUVORK5CYII=" />
+                            </button> </a>
                     </div>
 
                     <div class="col-4 col-md-4 col-sm-12">
@@ -48,8 +48,8 @@
                                 </div>
                                 <div class="count-info">
                                     <h5 id="confirmed-total"> {{ $novoData['last_available_confirmed'] }} </h5>
-                                       
-                                        <span>Confirmados</span>
+
+                                    <span>Confirmados</span>
                                 </div>
                             </div>
                         </div>
@@ -61,51 +61,20 @@
                                     <i class="bx bxs-sad"></i>
                                 </div>
                                 <div class="count-info">
-                                     <h5 id="death-total">{{ $novoData['last_available_deaths'] }}</h5>
-                                      
-                                        <span>Mortos</span>
+                                    <h5 id="death-total">{{ $novoData['last_available_deaths'] }}</h5>
+
+                                    <span>Mortos</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-12">
-                        <div class="box1">
+                        <div class="box">
                             <div class="box-header">
                                 <h2>Período de pandemia no Brasil</h2>
                             </div>
                             <div class="box-body">
-                                <div id="all-time-chart"></div>
-                                <div id="chart"></div>
-                                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-                                <script type="text/javascript">
-                                    google.charts.load('current', {
-                                        packages: ['corechart']
-                                    })
-                                    google.charts.setOnLoadCallback(drawChart)
-
-                                    function drawChart() {
-                                        const container = document.querySelector('#chart')
-                                        const data = new google.visualization.arrayToDataTable([
-                                            ['', ''],
-                                            ['Janeiro', 2000],
-                                            ['Fevereiro', 4000],
-                                            ['Março', 6000],
-                                            ['Abril', 8000],
-                                            ['Maio', 10000]
-                                        ])
-                                        const options = {
-
-                                            height: 480,
-                                            width: 800
-                                        }
-
-                                        // const chart = new google.visualization.ColumnChart(container)
-                                        // const chart = new google.visualization.BarChart(container)
-                                        const chart = new google.visualization.LineChart(container)
-                                        //const chart = new google.visualization.PieChart(container)
-                                        chart.draw(data, options)
-                                    }
-                                </script>
+                                <canvas class="bar-chart"></canvas>
                             </div>
                         </div>
                     </div>
@@ -113,7 +82,7 @@
                     <div class="col-6 col-md-6 col-sm-12">
                         <div class="box">
                             <div class="box-header">
-                               <h3>O que é covid-19</h3> 
+                                <h3>O que é covid-19</h3>
                             </div>
                             <div class="box-body">
                                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/WpmTtNSM86g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
@@ -122,13 +91,10 @@
                         </div>
                     </div>
 
-
-
-
                     <div class="col-6 col-md-6 col-sm-12">
                         <div class="box">
                             <div class="box-header">
-                            <h3>Como se proteger do covid-19</h3>
+                                <h3>Como se proteger do covid-19</h3>
                             </div>
                             <div class="box-body">
                                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/yZymLHHStZw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -147,139 +113,56 @@
 
                 <div class="box">
                     <div class="box-header">
-                       <h3>últimos 30 dias</h3> 
+                        <h3>últimos 30 dias</h3>
                     </div>
                     <div class="box-body">
-                        <div id="days-chart"></div>
-
-                        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-                        <script type="text/javascript">
-                            google.charts.load('current', {
-                                packages: ['corechart']
-                            })
-                            google.charts.setOnLoadCallback(drawChart)
-
-                            function drawChart() {
-                                const container = document.querySelector('#days-chart')
-                                const data = new google.visualization.arrayToDataTable([
-                                    ['', ''],
-                                    ['Janeiro', 2000],
-                                    ['Fevereiro', 4000],
-                                    ['Março', 6000],
-                                    ['Abril', 8000],
-                                    ['Maio', 10000]
-                                ])
-                                const options = {
-
-                                    height: 400,
-                                    width: 420
-                                }
-
-                                // const chart = new google.visualization.ColumnChart(container)
-                                // const chart = new google.visualization.BarChart(container)
-                                const chart = new google.visualization.LineChart(container)
-                                //const chart = new google.visualization.PieChart(container)
-                                chart.draw(data, options)
-                            }
-                        </script>
-
+                        <canvas class="line-chart"></canvas>
                     </div>
                 </div>
 
-                <div class="box6">
+                <div class="box">
                     <div class="box-header">
-                    
-                            <h3>Taxa de recuperados </h3>
-                        
+                        <h3>Total de recuperados no Brasil </h3>
                     </div>
-
                     <div class=" col-md-4 col-sm-12">
-
                         <div class="box box-hover">
                             <div class="count count-recovered">
                                 <div class="count-icon">
                                     <i class="bx bxs-smile"></i>
                                 </div>
                                 <div class="count-info">
-
                                     <h5 id="recovered-total">{{$recoveredBrazilData}}</h5>
-                                    <span>Total de recuperados no Brasil</span>
-
                                 </div>
-
                             </div>
-
-                        </div>
-
-
-
-
-
-                        <!-- <div id="recover-rate-chart"></div> -->
-                        <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
-                        <!-- <script type="text/javascript"> -->
-                        <!-- google.charts.load('current', { -->
-                        <!-- packages: ['corechart'] -->
-                        <!-- }) -->
-                        <!-- google.charts.setOnLoadCallback(drawChart) -->
-                        <!--  -->
-                        <!-- function drawChart() { -->
-                        <!-- const container = document.querySelector('#recover-rate-chart') -->
-                        <!-- const data = new google.visualization.arrayToDataTable([ -->
-                        <!-- ['', ''], -->
-                        <!-- ['Janeiro', 2000], -->
-                        <!-- ['Fevereiro', 4000], -->
-                        <!-- ['Março', 6000], -->
-                        <!-- ['Abril', 8000], -->
-                        <!-- ['Maio', 10000] -->
-                        <!-- ]) -->
-                        <!-- const options = { -->
-                        <!--  -->
-                        <!-- height: 480, -->
-                        <!-- width: 600 -->
-                        <!-- } -->
-                        <!--  -->
-                        <!-- // const chart = new google.visualization.ColumnChart(container) -->
-                        <!-- // const chart = new google.visualization.BarChart(container) -->
-                        <!-- //const chart = new google.visualization.LineChart(container) -->
-                        <!-- const chart = new google.visualization.PieChart(container) -->
-                        <!-- chart.draw(data, options) -->
-                        <!-- } -->
-                        <!-- </script> -->
-                        <!--  -->
-                        <!-- </div> -->
-                    </div>
-                    <div class="box">
-                        <div class="box-header">
-                        <h3>top países infectados</h3>
-                        </div>
-                        <div class="box-body" >
-                            @include('paisesInfectado')
                         </div>
                     </div>
-
                 </div>
-
+                <div class="box">
+                    <div class="box-header">
+                        <h3>top países infectados</h3>
+                    </div>
+                    <div class="box-body">
+                        @include('paisesInfectado')
+                    </div>
+                </div>
             </div>
+        </div>
 
         </div>
         </div>
 
     </center>
 
-    <!-- </div> -->
-    <!-- <div class="loader"> -->
-    <!-- <i class="bx bxs-virus bx-spin"></i> -->
-    <!--  -->
-    <!-- </div> -->
-
-
     <!--graficos-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js" integrity="sha512-Xi9hntzKnjRajIIkbxU5XFCnY4fXApOTc/uf4TkJRE/kv5k9jAaK+CWLHJnpcGdWJsxNColUdRESQQPL+dSR9A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!---js-->
     <script src="{{asset('js/load_cidades.js')}}"></script>
+    <script src="{{asset('js/newCasesGraph.js')}}"></script>
+    <script src="{{asset('js/lastThirtyDaysGraph.js')}}"></script>
 </body>
 
 </html>
