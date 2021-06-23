@@ -10,8 +10,6 @@
     --shadow: 0 0 30px 0 rgb(82 63 105 / 5%);
 }
 
-
-
 * {
     padding: 0;
     margin: 0;
@@ -67,9 +65,6 @@ body {
 .logo i {
     color: rgb(6, 134, 27);
 }
-
-
-
 
 
 .box {
@@ -138,9 +133,7 @@ body {
     position: relative;
     text-transform: uppercase;
 }
-/* end box */
 
-/* country dropdown */
 .country-select {
     position: relative;
 }
@@ -208,8 +201,7 @@ body {
 .country-item:hover {
     background-color: var(--bg-hover);
 }
-/* end country dropdown */
-/* country dropdown */
+
 .state-select {
     position: left 15px;
 }
@@ -265,7 +257,7 @@ body {
 .state-item:hover {
     background-color: var(--bg-hover);
 }
-/* end country dropdown */
+
 .bnt { 
     
     outline: none;
@@ -282,9 +274,6 @@ body {
     transition: all 0.3s linear;
 }
 
-
-
-/* count box */
 .count {
     padding: 5px;
     display: flex;
@@ -346,9 +335,7 @@ body {
 .count-death .count-info h5 {
     color: #373c43;
 }
-/* end count box */
 
-/* countries table */
 .table-countries {
     width: 100%;
     border-spacing: 0;
@@ -373,9 +360,7 @@ body {
 .table-countries tbody tr:hover {
     background-color: var(--bg-hover);
 }
-/* end countries table */
 
-/* loader */
 .loader {
     position: fixed;
     z-index: 99;
@@ -396,9 +381,7 @@ body {
     visibility: visible;
     opacity: 1;
 }
-/* end loader */
 
-/* footer */
 .footer {
     background-color: var(--bg-content);
     box-shadow: var(--shadow);
@@ -406,7 +389,7 @@ body {
     text-align: center;
     padding: 2rem;
 }
-/* end footer */
+
 
 @media only screen and (max-width: 1280px) {
     body {
