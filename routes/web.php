@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PopularSelectController@index');
 Route::get('load_cidades', 'PopularSelectController@loadCidades')->name('load_cidades');
 Route::post('load_api', 'ConsumindoApiController@loadApi')->name('load_api');
-Route::get ('paises_infectados', 'ExtrairDadosController@index')->name('paises_infectados');
 Route::get('/consumindo', 'ConsumindoApiController@estados');
 
 
